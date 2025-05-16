@@ -66,6 +66,4 @@ def insert_transaction(transactions):
     connection.close()
 
 refresh_token = "Inset_your_Refresh_token"
-new_access_token = refresh_access_token(refresh_token)
-transactions = get_transactions(new_access_token)
-insert_transaction(transactions)
+insert_transaction(get_transactions(refresh_access_token(refresh_token)))
