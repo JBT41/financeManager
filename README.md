@@ -157,5 +157,62 @@ curl -X GET "https://bankaccountdata.gocardless.com/api/v2/accounts/065da497-e6a
   -H  "accept: application/json" \
   -H  "Authorization: Bearer ACCESS_TOKEN"
 
+Now that you have authenticated the goCardLess api with your bank
+you should have 2 very important keys
+  1) access token
+  2) refresh token
+We can move onto the next step - creating the MariaDB structure
+i have a Database called Bank and a table called Bills
+probably not the best naming convention for a large scale application but effective for what i want
+![image](https://github.com/user-attachments/assets/ca262f23-9b39-4d3c-86b7-8d4b3b5822f0)
+
+The bills table is setup as below
+
+![image](https://github.com/user-attachments/assets/f1ed1271-57ec-4241-8739-78707ac5b366)
+
+i wanted to make sure each transaction inserted had a unique identifer.
+easiest way was ensuring each column was linked to a primary key
+
+![image](https://github.com/user-attachments/assets/882ffab6-851d-4718-a4f7-6c381b92af24)
+
+using a simple select statement we can see an example of the data that we are going to be working with
+its worth noting here that the "amount" is in a double format which is not effective for currency
+this data was inserted before i fixed this blunder.
+
+![image](https://github.com/user-attachments/assets/c102e7f3-6086-4c77-8bf7-80f469ac22c3)
+
+
+Here we have the cronjob we setup to automatically run the python script
+this is currently ran on an ubuntu VM - but this will be moved to a Raspbery pi 4b
+this is so the script can be ran everyday without my laptop being left on - Raspberry pi is much small form factor and significantly less power draw.
+
+![image](https://github.com/user-attachments/assets/1cf17fc6-389c-438d-ac51-9756078fd3be)
+
+You'll notice here that the cronjob is setup to run every second ( * * * * *).
+this is because the script in that file location is just a test.
+
+when we move to the PI the cronjob will need updating to (0 5 * * *).
+
+0: Specifies the 0th minute of the hour.
+
+5: Specifies the 5th hour of the day (which is 5 AM).
+
+*: Specifies every day of the month.
+
+*: Specifies every month.
+
+*: Specifies every day of the week.
+
+which will run the script every days at 05 am.
+
+
+
+
+
+
+
+
+
+
 
 
