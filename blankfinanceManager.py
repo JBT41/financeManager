@@ -4,18 +4,26 @@ import mysql.connector as mariadb
 import datetime
 
 # The access token will expire every 24 hoursa new access token will be needed
+# This function is designed to refresh the access token and return it
 def refresh_access_token(refresh_token):
+    # Define the API endpoint URL for refreshing the access token.
     url = "https://bankaccountdata.gocardless.com/api/v2/token/refresh/"
+    # Define the headers for the HTTP request.
     headers = {
         "Content-Type": "application/json",
         "Accept": "application/json",
     }
+    # Define the data to be sent in the request body.  This is the refresh token passed to the function.
     data = {
         "refresh": refresh_token,
     }
+    #post the request and store the response in a variable called "response".
     response = requests.request("POST", url, headers=headers, json=data)
+    # The 'response.json()' method converts the server's response (which is typically a string) into a Python dictionary.
     response_json = response.json()
+    #Extract the new refresh token from the dictionary.
     new_access_token = response_json["access"]
+    #return the new access token.
     return new_access_token
 
 def get_transactions(access_token):
