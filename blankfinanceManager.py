@@ -3,6 +3,10 @@ import requests
 import mysql.connector as mariadb
 import datetime
 
+#im concious of the lack of error handling on this script
+# However, for a small scale script designed for personal use the requirement didnt seem necesary 
+# the script was tested and improved during the development process so im confident it works.
+
 # The access token will expire every 24 hoursa new access token will be needed
 # This function is designed to refresh the access token and return it
 def refresh_access_token(refresh_token):
