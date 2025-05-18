@@ -206,6 +206,15 @@ when we move to the PI the cronjob will need updating to (0 5 * * *).
 which will run the script every days at 05 am.
 
 
+Next steps:
+
+1) when the pi arrives, move the database and the script over to the pi (ubuntu) and re-calibrate the cronjob
+2) Build a dashboard using powerBI or grafrana to analyse the transactional data
+3) Design and develop a script to semi-automate the curl requests required to link your bank to goCardless
+4) Can a Java web app be created to automatically adjust my budget as bills are paid using the data inserted into the database?
+
+
+
 
 
 
