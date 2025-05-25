@@ -181,6 +181,13 @@ this data was inserted before i fixed this blunder.
 
 ![image](https://github.com/user-attachments/assets/c102e7f3-6086-4c77-8bf7-80f469ac22c3)
 
+We can start analysing some transactions now
+for example we can look at our daily and total expendeture in december#
+
+![image](https://github.com/user-attachments/assets/4d3bfaac-b4f0-4096-bfd6-06e1dabe8435)
+
+![image](https://github.com/user-attachments/assets/6b67a711-7590-4933-b768-96615d7da501)
+
 
 Here we have the cronjob we setup to automatically run the python script
 this is currently ran on an ubuntu VM - but this will be moved to a Raspbery pi 4b
