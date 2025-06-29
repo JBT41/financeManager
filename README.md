@@ -5,6 +5,8 @@ The finance manager project is designed to autmatically pull transactional data 
 there are 3 compenants to the script, refreshing the access token, pulling the transactions, and inserting the transactions into the DB. This will be broken down
 into 3 functions that will be called within the main function, it should avoid any hard coding for ease of use.
 
+Python code: https://github.com/JBT41/financeManager/blob/main/blankfinanceManager.py
+
 Goals
 
 1.) Automatically refresh the access token (expires every 24hours)
