@@ -3,7 +3,7 @@ import requests
 import mysql.connector as mariadb
 import datetime
 
-#im concious of the lack of error handling on this script
+# im concious of the lack of error handling on this script
 # However, for a small scale script designed for personal use the requirement didnt seem necesary 
 # the script was tested and improved during the development process so im confident it works.
 
