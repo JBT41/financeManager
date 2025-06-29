@@ -164,16 +164,14 @@ you should have 2 very important keys
 We can move onto the next step - creating the MariaDB structure
 i have a Database called Bank and a table called Bills
 probably not the best naming convention for a large scale application but effective for what i want
+
 ![image](https://github.com/user-attachments/assets/ca262f23-9b39-4d3c-86b7-8d4b3b5822f0)
 
 The bills table is setup as below
 
 ![image](https://github.com/user-attachments/assets/f1ed1271-57ec-4241-8739-78707ac5b366)
 
-i wanted to make sure each transaction inserted had a unique identifer.
-easiest way was ensuring each column was linked to a primary key
 
-![image](https://github.com/user-attachments/assets/882ffab6-851d-4718-a4f7-6c381b92af24)
 
 using a simple select statement we can see an example of the data that we are going to be working with
 its worth noting here that the "amount" is in a double format which is not effective for currency
